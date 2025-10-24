@@ -1,0 +1,38 @@
+:root{
+  --bg: #fdfaf7;
+  --card: #ffffff;
+  --muted: #7a7a7a;
+  --accent: #f3c9a9;
+  --accent-2: #c8e3da;
+  --radius: 14px;
+  --maxw: 960px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, var(--bg) 0%, #fff 100%);
+  color:#333;
+  overflow-x:hidden;
+  animation: fadeInBody 2s ease-in;
+}
+@keyframes fadeInBody{from{opacity:0;}to{opacity:1;}}
+.container{max-width:var(--maxw);margin:0 auto;padding:28px;animation: fadeInUp 1.8s ease both;}
+.site-header{text-align:center;padding:60px 0 20px;animation: fadeInDown 1.6s ease both;}
+.highlight{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;color:transparent;font-weight:800}
+.tagline{color:var(--muted);margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:24px}
+.card{background:var(--card);border-radius:var(--radius);padding:24px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.05);
+  transition:transform .3s ease, box-shadow .3s ease;animation: fadeInCard 1.8s ease both;}
+.card:nth-child(2){animation-delay:0.4s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 28px rgba(0,0,0,0.08)}
+.avatar{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px;margin:0 auto 12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;}
+.wish-section{text-align:center;position:relative;margin-top:60px;padding:60px 20px;background:#fffefb;border-radius:var(--radius);
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);animation: fadeInUp 2.2s ease both;animation-delay:0.6s;}
+.wish-text{max-width:600px;margin:0 auto;font-size:1.1rem;color:#555;line-height:1.6;margin-top:12px}
+#wfloatingIcons,canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
+.site-footer{text-align:center;padding:24px;color:var(--muted);margin-top:40px;animation: fadeInUp 2s ease both;animation-delay:1.2s;}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInCard{from{opacity:0;transform:scale(0.96);}to{opacity:1;transform:scale(1);}}
